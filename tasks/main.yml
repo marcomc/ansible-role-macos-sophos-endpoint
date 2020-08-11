@@ -1,0 +1,12 @@
+---
+- name: "Verify if {{ sophos_app_name }} is already installed"
+  stat:
+    path: "/Applications/{{ sophos_app_name }}.app"
+  register: sophos_app_status
+
+- debug:
+    msg: "/Applications/{{ sophos_app_name }}.app alreay exists. Skipping installation..."
+  when: sophos_app_status.stat.exists
+
+- include: install_endpoint.yml
+  when: sophos_app_status.stat.exists == False

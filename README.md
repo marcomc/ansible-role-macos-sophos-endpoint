@@ -29,7 +29,9 @@ sophos_cloud_config: "{{sophos_installer_dir_path}}/{{sophos_installer_component
         sophos_installer_url: https://drive.google.com/file/d/xxxyyyzzz
 
       roles:
-         - { role: marcomc.sophos-endpoint }
+         - { role: marcomc.sophos-endpoint,
+             src: https://github.com/marcomc/ansible-role-sophos-endpoint.git
+           }
 ```
 
 ## License

@@ -8,7 +8,7 @@
   when: sophos_installer_url is defined and sophos_installer_url | regex_search( item.base_url, ignorecase=True )
   become: true
 
-- name: Set Sophos installer url to {{ actual_download_url }} 
+- name: Set Sophos installer url to {{ actual_download_url }}
   set_fact:
     sophos_installer_url: "{{ actual_download_url }}"
   when: actual_download_url is defined

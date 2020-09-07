@@ -9,7 +9,7 @@
 
 - name: Download the installer if it is not present already
   include: download_installer.yml
-  when: sophos_installer_stat.stat.exists == False
+  when: not sophos_installer_stat.stat.exists | bool
 
 - name: Verify that the installer has been downloaded
   include: check_installer.yml

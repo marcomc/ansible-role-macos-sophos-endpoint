@@ -11,7 +11,7 @@
 
 - debug:
     msg: "The file {{ sophos_cloud_config }} is not present. Skipping the installation..."
-  when: sophos_cloud_config_stat.stat.exists == False
+  when: not sophos_cloud_config_stat.stat.exists | bool
 
 - name: Run Sophos Endpoint installation in the background
   command:

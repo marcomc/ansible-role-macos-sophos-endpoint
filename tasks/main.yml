@@ -9,4 +9,4 @@
   when: sophos_app_status.stat.exists
 
 - include: install_endpoint.yml
-  when: sophos_app_status.stat.exists == False
+  when: not sophos_app_status.stat.exists | bool

@@ -3,6 +3,7 @@
   file:
    path: "{{ sophos_installer_dir_path }}"
    state: directory
+   mode: '0775'
 
 - name: Check if the installer file is present
   include: check_installer.yml

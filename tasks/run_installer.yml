@@ -3,6 +3,7 @@
   unarchive:
     src: "{{ sophos_installer_path }}"
     dest: "{{ sophos_installer_dir_path }}"
+    mode: 0775
 
 - name: Verify if the file {{ sophos_cloud_config }} exists
   stat:

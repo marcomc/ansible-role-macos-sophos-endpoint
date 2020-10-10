@@ -1,17 +1,22 @@
 ---
-- name: Unarchive {{ sophos_installer_path }}
+- name: Unarchive "{{ sophos_installer_path }}"
   unarchive:
     src: "{{ sophos_installer_path }}"
     dest: "{{ sophos_installer_dir_path }}"
     mode: 0775
 
-- name: Verify if the file {{ sophos_cloud_config }} exists
+- name: Verify if the file "{{ sophos_cloud_config }}" exists
   stat:
     path: "{{ sophos_cloud_config }}"
   register: sophos_cloud_config_stat
 
+- name: sophos_cloud_config_stat
+  debug:
+    var: sophos_cloud_config_stat
+  when: verbose|bool
+
 - debug:
-    msg: "The file {{ sophos_cloud_config }} is not present. Skipping the installation..."
+    msg: The file "{{ sophos_cloud_config }}" is not present. Skipping the installation...
   when: not sophos_cloud_config_stat.stat.exists | bool
 
 - name: Run Sophos Endpoint installation in the background

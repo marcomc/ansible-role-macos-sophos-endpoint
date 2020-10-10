@@ -1,10 +1,12 @@
 ---
 - name: Detect Fileserver and convert download url
   set_fact:
-    actual_download_url: >-
-      "{{ item.download_url }}{{ [item.file_id_position]|map('extract', (sophos_installer_url | urlsplit('path')).split('/')|list)| list|first }}"
+    actual_download_url: "{{ item.download_url }}{{ item.file_id }}"
   with_items:
-    - { name: 'Google Drive',  base_url: 'drive.google.com/file/d/', download_url: 'https://drive.google.com/uc?export=download&id=', file_id_position: 3 }
+    - name: 'Google Drive'
+      base_url: 'drive.google.com/file/d/'
+      download_url: https://drive.google.com/uc?export=download&id=
+      file_id: "{{ [3] | map('extract', (sophos_installer_url | urlsplit('path')).split('/')|list)| list|first }}"
   when: sophos_installer_url is defined and sophos_installer_url | regex_search( item.base_url, ignorecase=True )
   become: true
 

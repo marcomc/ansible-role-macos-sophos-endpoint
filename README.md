@@ -32,8 +32,9 @@ sophos_cloud_config: "{{sophos_installer_dir_path}}/{{sophos_installer_component
          - role: marcomc.macos_sophos_endpoint
 ```
 
-## License
+License
+-------
 
-BSD
+[MIT](LICENSE)
 
-## Author Information
+Author : Marco Massari Calderone (c) 2020 - marco@marcomc.com

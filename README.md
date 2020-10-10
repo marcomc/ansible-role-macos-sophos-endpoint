@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/marcomc/ansible-role-sophos-endpoint.svg?branch=master)](https://travis-ci.org/marcomc/ansible-role-sophos-endpoint)
+[![Build Status](https://travis-ci.com/marcomc/ansible-role-sophos-endpoint.svg?branch=master)](https://travis-ci.com/marcomc/ansible-role-sophos-endpoint)
 
 # sophos-endpoint
 

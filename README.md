@@ -24,14 +24,12 @@ sophos_cloud_config: "{{sophos_installer_dir_path}}/{{sophos_installer_component
 ## Example Playbook
 
 ```
-    - hosts: servers
+    - hosts: macos_clients
       vars:
         sophos_installer_url: https://drive.google.com/file/d/xxxyyyzzz
 
       roles:
-         - { role: marcomc.sophos_endpoint,
-             src: https://github.com/marcomc/ansible-role-sophos-endpoint.git
-           }
+         - role: marcomc.macos_sophos_endpoint
 ```
 
 ## License

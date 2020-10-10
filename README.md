@@ -1,8 +1,8 @@
 [![Build Status](https://travis-ci.com/marcomc/ansible-role-macos-sophos-endpoint.svg?branch=master)](https://travis-ci.com/marcomc/ansible-role-macos-sophos-endpoint)
 
-# sophos-endpoint
+# Sophos Endpoint Ansible role for macOS
 
-Ansible role to configure defaults on OSX.
+Ansible role to install Sophos Endpoint on macOS.
 
 ## Requirements
 

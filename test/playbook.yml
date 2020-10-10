@@ -13,5 +13,5 @@
     # test copy of Installer with fake company registration tokens
 
   roles:
-    - macos_filevault2
+    - macos_sophos_endpoint
 ...
